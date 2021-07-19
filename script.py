@@ -19,7 +19,7 @@ def check_bday():
     for index, row in df.iterrows():
         try:
             if df['DOB'][index] == today_format:
-                # kit.sendwhatmsg() takes  
+                # kit.sendwhatmsg() takes Phone Number, message, hour in 24 Hour format, mins from 00-59 respectively as arguments  
                 kit.sendwhatmsg("+91{9740979450}", "Today is " + df['Name'][index] + "'s birthday", 11, 24)
         except Exception as e:
             pass
