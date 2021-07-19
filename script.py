@@ -10,7 +10,7 @@ today = date.today()
 today_format = today.strftime('%d-%m')
 
 # Establishing a connection to AWS RDS MySQL instance
-connection = create_engine('mysql+pymysql://admin:shitindianssay@database-1.cke6baraqvyb.ap-south-1.rds.amazonaws.com:3306/memechat')
+connection = create_engine('mysql+pymysql://username:password@database-1.cke6baraqvyb.ap-south-1.rds.amazonaws.com:3306/schema')
 df = pd.read_sql('SELECT * FROM `employee_details` ORDER BY EXTRACT(MONTH FROM DOB), EXTRACT(DAY FROM DOB) ASC', connection)
 # Storing the DOB column in 'dd-mm' format
 df['DOB'] = pd.to_datetime(df['DOB']).dt.strftime('%d-%m')
@@ -19,6 +19,7 @@ def check_bday():
     for index, row in df.iterrows():
         try:
             if df['DOB'][index] == today_format:
+                # kit.sendwhatmsg() takes  
                 kit.sendwhatmsg("+91{9740979450}", "Today is " + df['Name'][index] + "'s birthday", 11, 24)
         except Exception as e:
             pass
