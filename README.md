@@ -3,7 +3,7 @@ This python script is written to send automated WhatsApp messages according to d
 
 Dependencies used :
 
-SQLAlchemy: To establish a connection to the AWS RDS MySQL instance
+SQLAlchemy: To establish a connection with the AWS RDS MySQL instance
 Link: https://pypi.org/project/SQLAlchemy/
 
 PyWhatKit: Sends messages on web.whatsapp.com
