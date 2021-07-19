@@ -9,7 +9,7 @@ today = date.today()
 # Changing today's date to 'dd-mm' format
 today_format = today.strftime('%d-%m')
 
-# Establishing a connection to AWS RDS MySQL instance
+# Establishing a connection with AWS RDS MySQL instance
 connection = create_engine('mysql+pymysql://username:password@database-1.cke6baraqvyb.ap-south-1.rds.amazonaws.com:3306/schema')
 df = pd.read_sql('SELECT * FROM `employee_details` ORDER BY EXTRACT(MONTH FROM DOB), EXTRACT(DAY FROM DOB) ASC', connection)
 # Storing the DOB column in 'dd-mm' format
